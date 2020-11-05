@@ -22,16 +22,12 @@ var date = [
 
 /* GET login page. */
 router.get("/", function (req, res, next) {
-<<<<<<< HEAD
   res.render("login", { title: "Express" });
 });
 
 /* GET homepage. */
 router.get("/homepage", function (req, res, next) {
   res.render("homepage", { title: "Express" });
-=======
-  res.render("login");
->>>>>>> main
 });
 
 // Remplissage de la base de donnée, une fois suffit
