@@ -22,6 +22,7 @@ h3 {
 }
 
 body {
+  font-family: "Roboto", sans-serif;
   height: 100%;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7db9e8+0,207cca+49,2989d8+50,1e5799+100 */
   background: rgb(125, 185, 232); /* Old browsers */
@@ -50,4 +51,8 @@ body {
 .go{
   background-color: #e92f4c;
   color: white;
+}
+.rounded {
+  margin-top: 70px;
+  width: 20%;
 }
