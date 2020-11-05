@@ -47,8 +47,11 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
 }
 
+.totalCmd {
+  background-color: #f4c7cb;
+}
 
-.go{
+.go {
   background-color: #e92f4c;
   color: white;
 }

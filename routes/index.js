@@ -30,6 +30,16 @@ router.get("/homepage", function (req, res, next) {
   res.render("homepage", { title: "Express" });
 });
 
+/* GET command page. */
+router.get("/command", function (req, res, next) {
+  res.render("command", { title: "Express" });
+});
+
+/* GET commande page. */
+router.get("/last-trip", function (req, res, next) {
+  res.render("last-trip", { title: "Express" });
+});
+
 // Remplissage de la base de donnée, une fois suffit
 router.get("/save", async function (req, res, next) {
   // How many journeys we want
@@ -75,8 +85,8 @@ router.get("/result", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
 
-router.get('/trains', async function(req, res, next) {
-  res.render('trains')
-})
+router.get("/trains", async function (req, res, next) {
+  res.render("trains");
+});
 
 module.exports = router;
