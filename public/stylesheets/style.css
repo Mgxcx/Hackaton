@@ -1,18 +1,6 @@
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
-body {
-  font-family: "Roboto", sans-serif;
-}
-
 html {
   height: 100%;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  color: white;
-  font-size: 13px;
-  width: 100%;
 }
 
 h3 {
@@ -21,6 +9,7 @@ h3 {
 }
 
 body {
+  font-family: "Roboto", sans-serif;
   height: 100%;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7db9e8+0,207cca+49,2989d8+50,1e5799+100 */
   background: rgb(125, 185, 232); /* Old browsers */
@@ -43,4 +32,17 @@ body {
     rgb(30, 87, 153) 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+}
+
+.rounded {
+  margin-top: 70px;
+  width: 20%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-size: 13px;
+  width: 100%;
 }
