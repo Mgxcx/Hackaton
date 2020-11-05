@@ -27,7 +27,7 @@ router.post("/signup", async function (req, res, next) {
     };
     res.redirect("/homepage");
   } else {
-    res.render("login");
+    res.redirect("/");
   }
 });
 
@@ -43,7 +43,7 @@ router.post("/signin", async function (req, res, next) {
     };
     res.redirect("/homepage");
   } else {
-    res.render("login");
+    res.redirect("/");
   }
 });
 
