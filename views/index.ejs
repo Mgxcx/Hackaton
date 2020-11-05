@@ -1,11 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Ticketac</title>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img
+          src="/images/train.png"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+          loading="lazy"
+        />
+        Ticketac
+      </a>
+      <ul class="navbar-nav d-inline-block p-3">
+        <li class="nav-item d-inline-block mr-4">
+          <a class="nav-link text-danger" href="#">Connection</a>
+        </li>
+        <li class="nav-item d-inline-block">
+          <a class="nav-link text-dark" href="#">My last trips</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- FORM -->
+    <div class="container mt-5">
+      <div class="row text-center">
+        <div class="col-3 offset-3">
+          <h3>Sign in :</h3>
+          <form>
+            <div class="form-group mb-0">
+              <label for="exampleInputEmail1"></label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                placeholder="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1"></label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="password"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-danger">Confirm</button>
+          </form>
+        </div>
+        <div class="col-3 ml-3">
+          <h3>Sign up :</h3>
+          <form>
+            <div class="form-group mb-0">
+              <label for="exampleInputEmail1"></label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="email"
+              />
+            </div>
+            <div class="form-group mb-0">
+              <label for="exampleInputPassword1"></label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="password"
+              />
+            </div>
+            <div class="form-group mb-0">
+              <label for="exampleInputFirstname"></label>
+              <input
+                type="name"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="firstname"
+                placeholder="firstname"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputLastname"></label>
+              <input
+                type="name"
+                class="form-control"
+                id="exampleInputLastname"
+                placeholder="lastname"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-danger">Confirm</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center font-italic">© La Capsule 2020</footer>
   </body>
 </html>
