@@ -3,21 +3,21 @@ var router = express.Router();
 var userModel = require("../models/users");
 
 /* GET users listing. */
-router.post("/sign-up", async function (req, res, next) {
+router.post("/signup", async function (req, res, next) {
   var searchUser = await userModel.findOne({ email: req.body.email, password: req.body.password });
 
   if (!searchUser) {
     var newUser = new userModel({
-      lastname: req.body.lastname,
       firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password,
     });
     var newUser = await newUser.save();
 
     req.session.user = {
-      lastname: req.body.lastname,
       firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password,
     };
@@ -27,13 +27,13 @@ router.post("/sign-up", async function (req, res, next) {
   }
 });
 
-router.post("/sign-in", async function (req, res, next) {
+router.post("/signin", async function (req, res, next) {
   var searchUser = await userModel.findOne({ email: req.body.email, password: req.body.password });
 
   if (searchUser) {
     req.session.user = {
-      lastname: searchUser.lastname,
       firstname: searchUser.firstname,
+      lastname: searchUser.lastname,
       email: searchUser.email,
       password: searchUser.password,
     };
