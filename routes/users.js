@@ -3,6 +3,10 @@ var router = express.Router();
 var userModel = require("../models/users");
 
 /* GET users listing. */
+router.get("/", function (req, res, next) {
+  res.render("login");
+});
+
 router.post("/signup", async function (req, res, next) {
   var searchUser = await userModel.findOne({ email: req.body.email, password: req.body.password });
 
