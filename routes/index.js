@@ -77,6 +77,11 @@ router.get("/result", function (req, res, next) {
 
 router.get('/trains', async function(req, res, next) {
   res.render('trains')
-})
+});
+
+router.get('/oops', function(req, res, next) {
+  res.render('oops')
+});
+
 
 module.exports = router;
