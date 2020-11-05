@@ -52,4 +52,8 @@ router.get("/result", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
 
+router.get('/trains', async function(req, res, next) {
+  res.render('trains')
+})
+
 module.exports = router;
