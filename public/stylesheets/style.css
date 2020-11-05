@@ -59,3 +59,8 @@ body {
   margin-top: 70px;
   width: 20%;
 }
+
+.btn.home {
+  background-color: #e92f4c;
+  color: white;
+}

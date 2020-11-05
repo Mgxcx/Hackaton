@@ -85,8 +85,19 @@ router.get("/result", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
 
+<<<<<<< HEAD
 router.get("/trains", async function (req, res, next) {
   res.render("trains");
 });
+=======
+router.get('/trains', async function(req, res, next) {
+  res.render('trains')
+});
+
+router.get('/oops', function(req, res, next) {
+  res.render('oops')
+});
+
+>>>>>>> main
 
 module.exports = router;
