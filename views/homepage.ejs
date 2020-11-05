@@ -17,10 +17,7 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Ticketac</title>
   </head>
@@ -28,14 +25,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
-        <img
-          src="/images/train.png"
-          width="30"
-          height="30"
-          class="d-inline-block align-top"
-          alt=""
-          loading="lazy"
-        />
+        <img src="/images/train.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" />
         Ticketac
       </a>
       <ul class="navbar-nav d-inline-block p-3">
@@ -54,21 +44,13 @@
       <div class="row text-center mr-4">
         <div class="col-8 offset-3">
           <h3 class="text-left mb-4">One-way ticket :</h3>
-          <form>
+          <form action="/homepagesearch" method="POST">
             <div class="form-row">
               <div class="col">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="From : Paris, Marseille.."
-                />
+                <input type="text" class="form-control" placeholder="From : Paris, Marseille.." name="departure" />
               </div>
               <div class="col">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="To : Lille, Nantes.."
-                />
+                <input type="text" class="form-control" placeholder="To : Lille, Nantes.." name="arrival" />
               </div>
               <label for="start"></label>
               <div class="col">
@@ -76,10 +58,10 @@
                   type="date"
                   class="form-control"
                   id="start"
-                  name="trip-start"
+                  name="date"
                   value="2018-11-05"
-                  min="2018-01-01"
-                  max="2018-12-31"
+                  min="2017-01-01"
+                  max="2021-12-31"
                 />
               </div>
               <button type="submit" class="btn btn-danger ml-4">Go</button>
@@ -88,11 +70,7 @@
         </div>
       </div>
     </div>
-    <img
-      src="/images/landmark.png"
-      class="rounded mx-auto d-block width: 50%"
-      alt="landmark"
-    />
+    <img src="/images/landmark.png" class="rounded mx-auto d-block width: 50%" alt="landmark" />
 
     <footer class="text-center font-italic">© La Capsule 2020</footer>
   </body>
