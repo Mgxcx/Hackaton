@@ -3,6 +3,19 @@ html {
   height: 100%;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-size: 13px;
+  width: 100%;
+}
+
 h3 {
   font-size: 30px;
   color: white;
@@ -34,15 +47,12 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
 }
 
+
+.go{
+  background-color: #e92f4c;
+  color: white;
+}
 .rounded {
   margin-top: 70px;
   width: 20%;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  color: white;
-  font-size: 13px;
-  width: 100%;
 }
