@@ -36,7 +36,7 @@
           alt=""
           loading="lazy"
         />
-        Ticketac !!
+        Ticketac
       </a>
       <ul class="navbar-nav d-inline-block p-3">
         <li class="nav-item d-inline-block mr-4">
@@ -52,7 +52,7 @@
 
     <div class="container mt-5">
       <div class="row text-center mr-4">
-        <div class="col-6 offset-3">
+        <div class="col-8 offset-3">
           <h3 class="text-left mb-4">One-way ticket :</h3>
           <form>
             <div class="form-row">
@@ -68,6 +68,18 @@
                   type="text"
                   class="form-control"
                   placeholder="To : Lille, Nantes.."
+                />
+              </div>
+              <label for="start"></label>
+              <div class="col">
+                <input
+                  type="date"
+                  class="form-control"
+                  id="start"
+                  name="trip-start"
+                  value="2020-11-05"
+                  min="2019-01-01"
+                  max="2021-12-31"
                 />
               </div>
               <button type="submit" class="btn btn-danger ml-4">Go</button>
