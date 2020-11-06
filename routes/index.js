@@ -2,32 +2,40 @@ var express = require("express");
 var router = express.Router();
 var journeyModel = require("../models/journey");
 
-var city = [
-  "Paris",
-  "Marseille",
-  "Nantes",
-  "Lyon",
-  "Rennes",
-  "Melun",
-  "Bordeaux",
-  "Lille",
-];
-var date = [
-  "2018-11-20",
-  "2018-11-21",
-  "2018-11-22",
-  "2018-11-23",
-  "2018-11-24",
-];
+var city = ["Paris", "Marseille", "Nantes", "Lyon", "Rennes", "Melun", "Bordeaux", "Lille"];
+var date = ["2018-11-20", "2018-11-21", "2018-11-22", "2018-11-23", "2018-11-24"];
 
 /* GET login page. */
 router.get("/", function (req, res, next) {
-  res.render("login", { title: "Express" });
+  res.render("login");
 });
 
 /* GET homepage. */
 router.get("/homepage", function (req, res, next) {
-  res.render("homepage", { title: "Express" });
+  res.render("homepage");
+});
+
+router.post("/homepagesearch", async function (req, res, next) {
+  var datebody = new Date(req.body.date);
+
+  var journeyList = await journeyModel.find();
+
+  var journeyListExist = false;
+  for (var i = 0; i < journeyList.length; i++) {
+    if (
+      req.body.departure === journeyList[i].departure &&
+      req.body.arrival === journeyList[i].arrival &&
+      datebody.getTime() == journeyList[i].date.getTime()
+    ) {
+      journeyListExist = true;
+    }
+  }
+
+  if (journeyListExist === true) {
+    res.redirect("/trains");
+  } else {
+    res.redirect("/oops");
+  }
 });
 
 /* GET command page. */
@@ -62,7 +70,7 @@ router.get("/save", async function (req, res, next) {
       await newUser.save();
     }
   }
-  res.render("index", { title: "Express" });
+  res.render("index");
 });
 
 // Cette route est juste une verification du Save.
@@ -74,24 +82,20 @@ router.get("/result", function (req, res, next) {
       { departure: city[i] }, //filtre
 
       function (err, journey) {
-        console.log(
-          `Nombre de trajets au départ de ${journey[0].departure} : `,
-          journey.length
-        );
+        console.log(`Nombre de trajets au départ de ${journey[0].departure} : `, journey.length);
       }
     );
   }
 
-  res.render("index", { title: "Express" });
+  res.render("index");
 });
 
-router.get('/trains', async function(req, res, next) {
-  res.render('trains')
+router.get("/trains", function (req, res, next) {
+  res.render("trains");
 });
 
-router.get('/oops', function(req, res, next) {
-  res.render('oops')
+router.get("/oops", function (req, res, next) {
+  res.render("oops");
 });
-
 
 module.exports = router;
