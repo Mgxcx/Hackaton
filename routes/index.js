@@ -31,8 +31,6 @@ router.post("/homepagesearch", async function (req, res, next) {
     }
   }
 
-  console.log(req.body);
-
   if (journeyListExist === true) {
     req.session.user = {
       departure: req.body.departure.charAt(0).toUpperCase() + req.body.departure.slice(1),
