@@ -23,7 +23,7 @@
   <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="homepage">
         <img
           src="/images/train.png"
           width="30"
@@ -36,47 +36,49 @@
       </a>
       <ul class="navbar-nav d-inline-block p-3">
         <li class="nav-item d-inline-block mr-4">
-          <a class="nav-link text-danger" href="#">Connection</a>
+          <a class="nav-link text-danger" href="login">Connection</a>
         </li>
         <li class="nav-item d-inline-block">
-          <a class="nav-link text-dark" href="#">My last trips</a>
+          <a class="nav-link text-dark" href="last-trip">My last trips</a>
         </li>
       </ul>
     </nav>
 
     <div class="container mt-5 px-5">
-      <div class="col-12 offset-3">
-        <h3 class="text-left mb-4">My last trips :</h3>
+      <div class="col-12 offset-2">
+        <h3 class="text-left mb-4 custom">My last trips :</h3>
       </div>
-      <div class="row mx-5 bg-white border-light p-3 my-auto">
-        <div class="col text-center font-weight-bold align-middle my-auto">
-          Date
-        </div>
-        <div class="col text-center font-weight-bold align-middle my-auto">
-          Journey
-        </div>
-        <div class="col text-center font-weight-bold align-middle my-auto">
-          Departure time
-        </div>
-        <div class="col text-center font-weight-bold align-middle my-auto">
-          Price
-        </div>
-      </div>
-      <div class="row mx-5 bg-white border-light p-3 my-auto">
-        <div class="col text-center align-middle my-auto">02/08/2019</div>
-        <div class="col text-center align-middle my-auto">Paris / Lille</div>
-        <div class="col text-center align-middle my-auto">15pm</div>
-        <div class="col text-center align-middle my-auto">93 €</div>
-      </div>
-      <div class="row mx-5 bg-white border-light p-3 my-auto">
-        <div class="col text-center align-middle my-auto">02/08/2019</div>
-        <div class="col text-center align-middle my-auto">Paris / Lille</div>
-        <div class="col text-center align-middle my-auto">15pm</div>
-        <div class="col text-center align-middle my-auto">93 €</div>
-      </div>
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th class="col-md-auto bg-white font-weight-bold">Date</th>
+            <th class="col-md-auto bg-white font-weight-bold">Journey</th>
+            <th class="col-md-auto bg-white font-weight-bold">
+              Departure Time
+            </th>
+            <th class="col-md-auto bg-white font-weight-bold">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="bg-white">Paris / Lille</td>
+            <td class="bg-white">02/08/2019</td>
+            <td class="bg-white">15pm</td>
+            <td class="bg-white">93 €</td>
+          </tr>
+          <tr>
+            <td class="bg-white mt-3">Paris / Marseille</td>
+            <td class="bg-white mt-3">07/08/2019</td>
+            <td class="bg-white mt-3">19pm</td>
+            <td class="bg-white mt-3">103 €</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <a href="homepage"
-      ><button type="button" class="btn go offset-9 mt-3">Home</button></a
+      ><button type="button" class="home-btn btn go offset-9 mr-5 mt-1">
+        Home
+      </button></a
     >
     <footer class="mt-auto text-center font-italic">© La Capsule 2020</footer>
   </body>

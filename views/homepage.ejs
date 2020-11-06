@@ -17,23 +17,33 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Ticketac</title>
   </head>
   <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="/images/train.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" />
+      <a class="navbar-brand" href="homepage">
+        <img
+          src="/images/train.png"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+          loading="lazy"
+        />
         Ticketac
       </a>
       <ul class="navbar-nav d-inline-block p-3">
         <li class="nav-item d-inline-block mr-4">
-          <a class="nav-link text-danger" href="#">Connection</a>
+          <a class="nav-link text-danger" href="/">Connection</a>
         </li>
         <li class="nav-item d-inline-block">
-          <a class="nav-link text-dark" href="#">My last trips</a>
+          <a class="nav-link text-dark" href="last-trip">My last trips</a>
         </li>
       </ul>
     </nav>
@@ -47,10 +57,20 @@
           <form action="/homepagesearch" method="POST">
             <div class="form-row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="From : Paris, Marseille.." name="departure" />
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="From : Paris, Marseille.."
+                  name="departure"
+                />
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="To : Lille, Nantes.." name="arrival" />
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="To : Lille, Nantes.."
+                  name="arrival"
+                />
               </div>
               <label for="start"></label>
               <div class="col">
@@ -70,7 +90,11 @@
         </div>
       </div>
     </div>
-    <img src="/images/landmark.png" class="rounded mx-auto d-block width: 50%" alt="landmark" />
+    <img
+      src="/images/landmark.png"
+      class="rounded mx-auto d-block width: 50%"
+      alt="landmark"
+    />
 
     <footer class="text-center font-italic">© La Capsule 2020</footer>
   </body>
