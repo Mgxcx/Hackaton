@@ -23,8 +23,8 @@ router.post("/homepagesearch", async function (req, res, next) {
   var journeyListExist = false;
   for (var i = 0; i < journeyList.length; i++) {
     if (
-      req.body.departure === journeyList[i].departure &&
-      req.body.arrival === journeyList[i].arrival &&
+      req.body.departure.toLowerCase() === journeyList[i].departure.toLowerCase() &&
+      req.body.arrival.toLowerCase() === journeyList[i].arrival.toLowerCase() &&
       datebody.getTime() == journeyList[i].date.getTime()
     ) {
       journeyListExist = true;
