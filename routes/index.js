@@ -38,8 +38,8 @@ router.post("/homepagesearch", async function (req, res, next) {
   var journeyListExist = false;
   for (var i = 0; i < journeyList.length; i++) {
     if (
-      req.body.departure === journeyList[i].departure &&
-      req.body.arrival === journeyList[i].arrival &&
+      req.body.departure.toLowerCase() === journeyList[i].departure.toLowerCase() &&
+      req.body.arrival.toLowerCase() === journeyList[i].arrival.toLowerCase() &&
       datebody.getTime() == journeyList[i].date.getTime()
     ) {
       journeyListExist = true;
@@ -47,6 +47,11 @@ router.post("/homepagesearch", async function (req, res, next) {
   }
 
   if (journeyListExist === true) {
+    req.session.user = {
+      departure: req.body.departure,
+      arrival: req.body.arrival,
+      date: datebody.getTime(),
+    };
     res.redirect("/trains");
   } else {
     res.redirect("/oops");
@@ -108,8 +113,20 @@ router.get("/result", function (req, res, next) {
   res.render("index");
 });
 
-router.get("/trains", function (req, res, next) {
-  res.render("trains");
+router.get("/trains", async function (req, res, next) {
+  console.log(req.session.user);
+  var journeyList = await journeyModel.find();
+  for (var i = 0; i < journeyList.length; i++) {
+    journeyList[i].date.getTime();
+  }
+  var journeyList = await journeyModel.find({
+    departure: req.session.user.departure,
+    arrival: req.session.user.arrival,
+    date: req.session.user.date,
+  });
+  req.session.user.journey = journeyList;
+  console.log(req.session.user.journey);
+  res.render("trains", { user: req.session.user });
 });
 
 router.get("/oops", function (req, res, next) {
