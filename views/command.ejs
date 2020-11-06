@@ -56,7 +56,11 @@
             <th class="col-md-auto bg-white font-weight-bold">
               Departure Time
             </th>
-            <th class="col-md-auto bg-white font-weight-bold">Price</th>
+            <th
+              class="col-md-auto bg-white font-weight-bold d-flex justify-content-center"
+            >
+              Price
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -65,31 +69,36 @@
             <td class="bg-white">Paris / Lille</td>
             <td class="bg-white">02/08/2019</td>
             <td class="bg-white">15pm</td>
-            <td class="bg-white">93 €</td>
+            <td class="bg-white d-flex justify-content-center">93 €</td>
           </tr>
           <tr>
             <th class="col-md-auto bg-white font-weight-bold">2</th>
             <td class="bg-white mt-3">Paris / Marseille</td>
             <td class="bg-white mt-3">07/08/2019</td>
             <td class="bg-white mt-3">19pm</td>
-            <td class="bg-white mt-3">103 €</td>
+            <td class="bg-white d-flex justify-content-center">103 €</td>
           </tr>
           <tr class="totalCmd">
             <th class="col-md-auto font-weight-bold">Total</th>
             <td class=""></td>
             <td class=""></td>
             <td class=""></td>
-            <td class="">250 €</td>
+            <td class="d-flex justify-content-center">250 €</td>
+          </tr>
+          <tr>
+            <th class="col-md-auto"></th>
+            <td class=""></td>
+            <td class=""></td>
+            <td class=""></td>
+            <td class="confirm-btn d-flex justify-content-end">
+              <!-- Button HTML (to Trigger Modal) -->
+              <a href="#myModal" class="trigger-btn btn go" data-toggle="modal">
+                Confirm
+              </a>
+            </td>
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <div class="confirm-btn offset-9">
-      <!-- Button HTML (to Trigger Modal) -->
-      <a href="#myModal" class="trigger-btn btn go" data-toggle="modal"
-        >Confirm</a
-      >
     </div>
 
     <!-- Modal HTML -->
@@ -108,12 +117,11 @@
               details.
             </p>
           </div>
-          <div class="modal-footer">
-            <button class="btn btn-success btn-block" data-dismiss="modal">
-                OK
-              </button>
-            </a>
-          </div>
+          <a href="homepage"
+            ><div class="modal-footer">
+              <button class="btn btn-success btn-block">OK</button>
+            </div>
+          </a>
         </div>
       </div>
     </div>

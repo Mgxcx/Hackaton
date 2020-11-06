@@ -1,33 +1,6 @@
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
-html {
-  height: 100vh;
-}
-
 body {
   font-family: "Roboto", sans-serif;
-  height: 100%;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  color: white;
-  font-size: 13px;
-  width: 100%;
-}
-
-h3 {
-  font-size: 30px;
-  color: white;
-}
-
-.custom {
-  margin-top: 80px;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  height: 100%;
+  min-height: 100vh;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7db9e8+0,207cca+49,2989d8+50,1e5799+100 */
   background: rgb(125, 185, 232); /* Old browsers */
   background: -moz-linear-gradient(
@@ -51,6 +24,15 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
 }
 
+h3 {
+  font-size: 30px;
+  color: white;
+}
+
+.custom {
+  margin-top: 80px;
+}
+
 .totalCmd {
   background-color: #f4c7cb;
 }
@@ -69,7 +51,7 @@ body {
   color: white;
 }
 
-/* POPUP DESIGN */
+/* POPUP WINDOW */
 
 .modal-confirm {
   color: #636363;
@@ -147,20 +129,28 @@ body {
 }
 .trigger-btn {
   display: inline-block;
-  margin: 100px auto;
   color: white;
 }
 
-.confirm-btn {
-  margin-top: -100px;
-  margin-left: 1150px;
-}
-
-.home-btn {
-  margin-top: -110px;
-  margin-left: 1150px;
-}
+/* .confirm-btn {
+  display: flex;
+  flex-grow: 1;
+} */
 
 .confirm-btn a {
   color: white;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* FOOTER */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-size: 13px;
+  width: 100%;
 }
