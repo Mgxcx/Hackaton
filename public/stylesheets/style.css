@@ -154,3 +154,8 @@ footer {
   font-size: 13px;
   width: 100%;
 }
+
+
+a.btn.go:hover {
+  color: white;
+}
