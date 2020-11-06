@@ -2,23 +2,8 @@ var express = require("express");
 var router = express.Router();
 var journeyModel = require("../models/journey");
 
-var city = [
-  "Paris",
-  "Marseille",
-  "Nantes",
-  "Lyon",
-  "Rennes",
-  "Melun",
-  "Bordeaux",
-  "Lille",
-];
-var date = [
-  "2018-11-20",
-  "2018-11-21",
-  "2018-11-22",
-  "2018-11-23",
-  "2018-11-24",
-];
+var city = ["Paris", "Marseille", "Nantes", "Lyon", "Rennes", "Melun", "Bordeaux", "Lille"];
+var date = ["2018-11-20", "2018-11-21", "2018-11-22", "2018-11-23", "2018-11-24"];
 
 /* GET login page. */
 router.get("/", function (req, res, next) {
@@ -102,10 +87,7 @@ router.get("/result", function (req, res, next) {
       { departure: city[i] }, //filtre
 
       function (err, journey) {
-        console.log(
-          `Nombre de trajets au départ de ${journey[0].departure} : `,
-          journey.length
-        );
+        console.log(`Nombre de trajets au départ de ${journey[0].departure} : `, journey.length);
       }
     );
   }
@@ -126,7 +108,7 @@ router.get("/trains", async function (req, res, next) {
   });
   req.session.user.journey = journeyList;
   console.log(req.session.user.journey);
-  res.render("trains", { user: req.session.user });
+  res.render("trains", { userjourney: req.session.user.journey });
 });
 
 router.get("/oops", function (req, res, next) {
