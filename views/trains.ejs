@@ -48,7 +48,7 @@
             <div class="col-auto my-auto font-weight-bold"><%= userjourney[i].departure %> / <%= userjourney[i].arrival %></div>
             <div class="col text-center align-middle my-auto">Train departure at: <%= userjourney[i].departureTime %></div>
             <div class="col-auto my-auto font-weight-bold"><%= userjourney[i].price %> €</div>
-            <button type="button" class="btn go">Ok</button>
+            <a href="/command?departureFromFront=<%= userjourney[i].departure %>&arrivalFromFront=<%= userjourney[i].arrival %>&dateFromFront=<%= dateFormat(userjourney[0].date) %>&timeFromFront=<%= userjourney[i].departureTime %>&priceFromFront=<%= userjourney[i].price %>" class="btn go">Ok</a>
           </div>
         </div>
       </div>
