@@ -2,8 +2,23 @@ var express = require("express");
 var router = express.Router();
 var journeyModel = require("../models/journey");
 
-var city = ["Paris", "Marseille", "Nantes", "Lyon", "Rennes", "Melun", "Bordeaux", "Lille"];
-var date = ["2018-11-20", "2018-11-21", "2018-11-22", "2018-11-23", "2018-11-24"];
+var city = [
+  "Paris",
+  "Marseille",
+  "Nantes",
+  "Lyon",
+  "Rennes",
+  "Melun",
+  "Bordeaux",
+  "Lille",
+];
+var date = [
+  "2018-11-20",
+  "2018-11-21",
+  "2018-11-22",
+  "2018-11-23",
+  "2018-11-24",
+];
 
 /* GET login page. */
 router.get("/", function (req, res, next) {
@@ -32,6 +47,11 @@ router.post("/homepagesearch", async function (req, res, next) {
   }
 
   if (journeyListExist === true) {
+    req.session.user = {
+      departure: req.body.departure,
+      arrival: req.body.arrival,
+      date: datebody.getTime(),
+    };
     res.redirect("/trains");
   } else {
     res.redirect("/oops");
@@ -82,7 +102,10 @@ router.get("/result", function (req, res, next) {
       { departure: city[i] }, //filtre
 
       function (err, journey) {
-        console.log(`Nombre de trajets au départ de ${journey[0].departure} : `, journey.length);
+        console.log(
+          `Nombre de trajets au départ de ${journey[0].departure} : `,
+          journey.length
+        );
       }
     );
   }
@@ -90,8 +113,20 @@ router.get("/result", function (req, res, next) {
   res.render("index");
 });
 
-router.get("/trains", function (req, res, next) {
-  res.render("trains");
+router.get("/trains", async function (req, res, next) {
+  console.log(req.session.user);
+  var journeyList = await journeyModel.find();
+  for (var i = 0; i < journeyList.length; i++) {
+    journeyList[i].date.getTime();
+  }
+  var journeyList = await journeyModel.find({
+    departure: req.session.user.departure,
+    arrival: req.session.user.arrival,
+    date: req.session.user.date,
+  });
+  req.session.user.journey = journeyList;
+  console.log(req.session.user.journey);
+  res.render("trains", { user: req.session.user });
 });
 
 router.get("/oops", function (req, res, next) {
