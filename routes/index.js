@@ -2,23 +2,8 @@ var express = require("express");
 var router = express.Router();
 var journeyModel = require("../models/journey");
 
-var city = [
-  "Paris",
-  "Marseille",
-  "Nantes",
-  "Lyon",
-  "Rennes",
-  "Melun",
-  "Bordeaux",
-  "Lille",
-];
-var date = [
-  "2018-11-20",
-  "2018-11-21",
-  "2018-11-22",
-  "2018-11-23",
-  "2018-11-24",
-];
+var city = ["Paris", "Marseille", "Nantes", "Lyon", "Rennes", "Melun", "Bordeaux", "Lille"];
+var date = ["2018-11-20", "2018-11-21", "2018-11-22", "2018-11-23", "2018-11-24"];
 
 /* GET login page. */
 router.get("/", function (req, res, next) {
@@ -38,15 +23,22 @@ router.post("/homepagesearch", async function (req, res, next) {
   var journeyListExist = false;
   for (var i = 0; i < journeyList.length; i++) {
     if (
-      req.body.departure === journeyList[i].departure &&
-      req.body.arrival === journeyList[i].arrival &&
+      req.body.departure.toLowerCase() == journeyList[i].departure.toLowerCase() &&
+      req.body.arrival.toLowerCase() == journeyList[i].arrival.toLowerCase() &&
       datebody.getTime() == journeyList[i].date.getTime()
     ) {
       journeyListExist = true;
     }
   }
 
+  console.log(req.body);
+
   if (journeyListExist === true) {
+    req.session.user = {
+      departure: req.body.departure.charAt(0).toUpperCase() + req.body.departure.slice(1),
+      arrival: req.body.arrival.charAt(0).toUpperCase() + req.body.arrival.slice(1),
+      date: datebody.getTime(),
+    };
     res.redirect("/trains");
   } else {
     res.redirect("/oops");
@@ -97,10 +89,7 @@ router.get("/result", function (req, res, next) {
       { departure: city[i] }, //filtre
 
       function (err, journey) {
-        console.log(
-          `Nombre de trajets au départ de ${journey[0].departure} : `,
-          journey.length
-        );
+        console.log(`Nombre de trajets au départ de ${journey[0].departure} : `, journey.length);
       }
     );
   }
@@ -108,8 +97,20 @@ router.get("/result", function (req, res, next) {
   res.render("index");
 });
 
-router.get("/trains", function (req, res, next) {
-  res.render("trains");
+router.get("/trains", async function (req, res, next) {
+  var journeyList = await journeyModel.find();
+  for (var i = 0; i < journeyList.length; i++) {
+    journeyList[i].departure.toLowerCase();
+    journeyList[i].arrival.toLowerCase();
+    journeyList[i].date.getTime();
+  }
+  journeyList = await journeyModel.find({
+    departure: req.session.user.departure,
+    arrival: req.session.user.arrival,
+    date: req.session.user.date,
+  });
+  req.session.user.journey = journeyList;
+  res.render("trains", { userjourney: req.session.user.journey });
 });
 
 router.get("/oops", function (req, res, next) {
