@@ -19,6 +19,16 @@ app.use(
   })
 );
 
+app.locals.dateFormat = date => { 
+  if(date === undefined || date === null) {
+    return "Date inconnue"
+  } else {
+    return `${date.getDate()}/${date.getMonth()}`;
+  }
+  
+} 
+
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");

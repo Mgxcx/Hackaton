@@ -39,7 +39,7 @@
 
     <div class="container-fluid">
 
-      <h3 class="text-left mb-4 mt-5 offset-3">Tickets available on : <%= userjourney[0].date %></h3>
+      <h3 class="text-left mb-4 mt-5 offset-3">Tickets available on <%= dateFormat(userjourney[0].date) %> :</h3>
 
       <% for (var i=0; i<userjourney.length; i++) { %>
       <div class="container mt-5 px-5">
@@ -57,5 +57,7 @@
     
 
     <footer class="mt-auto text-center font-italic">© La Capsule 2020</footer>
+
+    <script src="javascripts/script.js"></script>
   </body>
 </html>
