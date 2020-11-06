@@ -1,6 +1,6 @@
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
 html {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
@@ -21,6 +21,10 @@ h3 {
   color: white;
 }
 
+.custom {
+  margin-top: 80px;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   height: 100%;
@@ -28,21 +32,21 @@ body {
   background: rgb(125, 185, 232); /* Old browsers */
   background: -moz-linear-gradient(
     top,
-    rgb(125, 185, 232) 0%,
+    rgb(194, 220, 232) 0%,
     rgb(41, 137, 216) 90%,
-    rgb(30, 87, 153) 100%
+    rgb(53, 132, 181) 100%
   ); /* FF3.6-15 */
   background: -webkit-linear-gradient(
     top,
-    rgb(125, 185, 232) 0%,
+    rgb(194, 220, 232) 0%,
     rgb(41, 137, 216) 90%,
-    rgb(30, 87, 153) 100%
+    rgb(53, 132, 181) 100%
   ); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(
     to bottom,
-    rgb(125, 185, 232) 0%,
+    rgb(194, 220, 232) 0%,
     rgb(41, 137, 216) 90%,
-    rgb(30, 87, 153) 100%
+    rgb(53, 132, 181) 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
 }
@@ -62,5 +66,101 @@ body {
 
 .btn.home {
   background-color: #e92f4c;
+  color: white;
+}
+
+/* POPUP DESIGN */
+
+.modal-confirm {
+  color: #636363;
+  width: 325px;
+  margin: 30px auto;
+}
+.modal-confirm .modal-content {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+}
+.modal-confirm .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal-confirm h4 {
+  text-align: center;
+  font-size: 26px;
+  margin: 30px 0 -15px;
+}
+.modal-confirm .form-control,
+.modal-confirm .btn {
+  min-height: 40px;
+  border-radius: 3px;
+}
+.modal-confirm .close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+.modal-confirm .modal-footer {
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.modal-confirm .icon-box {
+  color: #fff;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -70px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  z-index: 9;
+  background: #e92f4c;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-confirm .icon-box i {
+  font-size: 58px;
+  position: relative;
+  top: 3px;
+}
+.modal-confirm.modal-dialog {
+  margin-top: 80px;
+}
+.modal-confirm .btn {
+  color: #fff;
+  border-radius: 4px;
+  background: #e92f4c;
+  text-decoration: none;
+  transition: all 0.4s;
+  line-height: normal;
+  border: none;
+}
+.modal-confirm .btn:hover,
+.modal-confirm .btn:focus {
+  background: #e92f4c;
+  outline: none;
+  color: white;
+}
+.trigger-btn {
+  display: inline-block;
+  margin: 100px auto;
+  color: white;
+}
+
+.confirm-btn {
+  margin-top: -100px;
+  margin-left: 1150px;
+}
+
+.home-btn {
+  margin-top: -110px;
+  margin-left: 1150px;
+}
+
+.confirm-btn a {
   color: white;
 }
