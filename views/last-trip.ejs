@@ -64,19 +64,16 @@
           </tr>
         </thead>
         <tbody>
+          <% 
+          for (var i=0; i<usercommand.length; i++) { 
+            %>
           <tr>
-            <td class="bg-white">Paris / Lille</td>
-            <td class="bg-white">02/08/2019</td>
-            <td class="bg-white">15pm</td>
-            <td class="bg-white d-flex justify-content-center">93 €</td>
+            <td class="bg-white"><%= usercommand[i].departure %> / <%= usercommand[i].arrival %></td>
+            <td class="bg-white"><%= usercommand[i].date %></td>
+            <td class="bg-white"><%= usercommand[i].departuretime %></td>
+            <td class="bg-white d-flex justify-content-center"><%= usercommand[i].price %> €</td>
           </tr>
-          <tr>
-            <td class="bg-white mt-3">Paris / Marseille</td>
-            <td class="bg-white mt-3">07/08/2019</td>
-            <td class="bg-white mt-3">19pm</td>
-            <td class="bg-white d-flex justify-content-center">103 €</td>
-          </tr>
-          <tr>
+          <% } %>
             <td class="mt-3"></td>
             <td class="mt-3"></td>
             <td class="mt-3"></td>

@@ -60,7 +60,7 @@ router.get("/command", function (req, res, next) {
 
 /* GET commande page. */
 router.get("/last-trip", function (req, res, next) {
-  res.render("last-trip");
+  res.render("last-trip", { usercommand: req.session.user.command });
 });
 
 // Remplissage de la base de donnée, une fois suffit
