@@ -31,8 +31,6 @@ router.post("/homepagesearch", async function (req, res, next) {
     }
   }
 
-  console.log(req.body);
-
   if (journeyListExist === true) {
     req.session.user = {
       departure: req.body.departure.charAt(0).toUpperCase() + req.body.departure.slice(1),
@@ -47,12 +45,22 @@ router.post("/homepagesearch", async function (req, res, next) {
 
 /* GET command page. */
 router.get("/command", function (req, res, next) {
-  res.render("command", { title: "Express" });
+  if (Object.values(req.query).length > 0) {
+    req.session.user.command.push({
+      departure: req.query.departureFromFront,
+      arrival: req.query.arrivalFromFront,
+      date: req.query.dateFromFront,
+      departuretime: req.query.timeFromFront,
+      price: req.query.priceFromFront,
+    });
+  }
+
+  res.render("command", { usercommand: req.session.user.command });
 });
 
 /* GET commande page. */
 router.get("/last-trip", function (req, res, next) {
-  res.render("last-trip", { title: "Express" });
+  res.render("last-trip");
 });
 
 // Remplissage de la base de donnée, une fois suffit
@@ -110,7 +118,11 @@ router.get("/trains", async function (req, res, next) {
     date: req.session.user.date,
   });
   req.session.user.journey = journeyList;
-  res.render("trains", { userjourney: req.session.user.journey });
+
+  if (req.session.user.command == undefined) {
+    req.session.user.command = [];
+  }
+  res.render("trains", { userjourney: req.session.user.journey, usercommand: req.session.user.command });
 });
 
 router.get("/oops", function (req, res, next) {

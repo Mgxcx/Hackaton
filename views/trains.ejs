@@ -39,7 +39,7 @@
 
     <div class="container-fluid">
 
-      <h3 class="text-left mb-4 mt-5 offset-3">Tickets available on : <%= userjourney[0].date %></h3>
+      <h3 class="text-left mb-4 mt-5 offset-3">Tickets available on <%= dateFormat(userjourney[0].date) %> :</h3>
 
       <% for (var i=0; i<userjourney.length; i++) { %>
       <div class="container mt-5 px-5">
@@ -48,7 +48,7 @@
             <div class="col-auto my-auto font-weight-bold"><%= userjourney[i].departure %> / <%= userjourney[i].arrival %></div>
             <div class="col text-center align-middle my-auto">Train departure at: <%= userjourney[i].departureTime %></div>
             <div class="col-auto my-auto font-weight-bold"><%= userjourney[i].price %> €</div>
-            <button type="button" class="btn go">Ok</button>
+            <a href="/command?departureFromFront=<%= userjourney[i].departure %>&arrivalFromFront=<%= userjourney[i].arrival %>&dateFromFront=<%= dateFormat(userjourney[0].date) %>&timeFromFront=<%= userjourney[i].departureTime %>&priceFromFront=<%= userjourney[i].price %>" class="btn go">Ok</a>
           </div>
         </div>
       </div>
@@ -57,5 +57,7 @@
     
 
     <footer class="mt-auto text-center font-italic">© La Capsule 2020</footer>
+
+    <script src="javascripts/script.js"></script>
   </body>
 </html>
