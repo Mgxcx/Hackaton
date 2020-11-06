@@ -73,7 +73,7 @@
             <td class="bg-white"><%= usercommand[i].departure %> / <%= usercommand[i].arrival %> </td>
             <td class="bg-white"><%= usercommand[i].date %></td>
             <td class="bg-white"><%= usercommand[i].departuretime %></td>
-            <td class="bg-white"><%= usercommand[i].price %> €</td>
+            <td class="bg-white d-flex justify-content-center"><%= usercommand[i].price %> €</td>
           </tr>
           <% 
           totalCmd += Number(usercommand[i].price);
@@ -83,7 +83,7 @@
             <td class=""></td>
             <td class=""></td>
             <td class=""></td>
-            <td class="d-flex justify-content-center">250 €</td>
+            <td class="d-flex justify-content-center"><%= totalCmd %> €</td>
           </tr>
           <tr>
             <th class="col-md-auto"></th>
@@ -96,15 +96,10 @@
                 Confirm
               </a>
             </td>
-            <td class=""><%= totalCmd %> €</td>
+            
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <div class="confirm-btn offset-9">
-      <!-- Button HTML (to Trigger Modal) -->
-      <a href="#myModal" class="trigger-btn btn go" data-toggle="modal">Confirm</a>
     </div>
 
     <!-- Modal HTML -->
