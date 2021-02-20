@@ -1,5 +1,5 @@
 # Hackaton
-Réalisation d'un "hackaton" en équipe lors de la troisième semaine de formation du 05 au 06 novembre : codé en EJS. Site de réservation de tickets de trains.
+Réalisation d'un "hackaton" en équipe lors de la 3ème semaine de formation du 05 au 06 novembre : codé en EJS. Site de réservation de tickets de trains.
 
 ![alt text](https://res.cloudinary.com/drchl4shw/image/upload/v1613846962/Hackaton1_r26o7z.png)
 ![alt text](https://res.cloudinary.com/drchl4shw/image/upload/v1613846962/Hackaton2_xjj4ij.png)
